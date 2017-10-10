@@ -1,0 +1,14 @@
+z=cplxgrid(20);
+
+w=log(1./z)
+%z(find(z==0))=NaN
+%z(find(abs(z)>5))=NaN
+%cplxmap(z,1./z,*pi)
+
+
+for k=0:3
+    w=w+i*2*pi;
+    surf(real(z),imag(z),imag(w),real(w));
+    colorbar('vert')
+    hold on
+end
